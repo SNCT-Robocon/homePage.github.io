@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    width:100%;
+    height:100%;
+}
+
+.overlap{
+    position: absolute;
+    width: 500px;
+    height: 100px;
+    background-color: blanchedalmond;
+    border-radius: 1.0rem;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.overlap_front span{
+    display: table-cell;
+    color: rgba(0, 0, 0,1);
+    height: 100px;
+    width: 500px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+@keyframes animation{
+    0%{
+        left: 0px;
+    }
+    50%{
+        left: 450px;
+    }
+    100%{
+        left: 0px;
+    }
+}
+
+.overlap_back{
+    position: absolute;
+    background-color: rgba(255, 255, 255,1);
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    bottom:25px;
+    mix-blend-mode: difference;
+    animation: animation 3s infinite;
+}
