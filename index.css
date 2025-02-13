@@ -16,7 +16,7 @@ html{
 
 @font-face {
     font-family: 'DelaGothicOne';
-    src: url('DelaGothicOne-Regular.ttf');
+    src: url('/fonts/DelaGothicOne-Regular.ttf');
     font-weight: 1 1000;
 }
 
@@ -249,4 +249,45 @@ body::-webkit-scrollbar-thumb {
     left: 50%;
     top: 50vh;
     width: 50vw;
+}
+
+
+#achievements h1{
+    font-size: 8vw;
+    letter-spacing: 1vw;
+    font-family: 'DelaGothicOne';
+    padding-left: 5vw;
+    width: 30vw;
+}
+
+#achievements hr{
+    width: 100%;
+    height: 1vw;
+    border: none;
+    background-color: white;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 5vw;
+}
+
+#achievements h2{
+    font-size: 4vw;
+    font-family: 'DelaGothicOne';
+    padding-left: 5vw;
+    width: 30vw;
+}
+
+#achievements p{
+    font-size: 2vw;
+    padding-left: 5vw;
+    font-weight: bold;
+}
+
+#achievements .spacer{
+    height: 5vw;
+}
+
+.footer{
+    height:30vw;
+    background-color: white;
 }
