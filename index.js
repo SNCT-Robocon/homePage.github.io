@@ -1,11 +1,52 @@
-// window.addEventListener('load',function(){
-//     document.getElementById('mainScreen').style.display = 'none';
-// })
+newsNum = 0;
+now=0;
 
-// document.getElementById('uzuka').addEventListener('animationend', () => {
-//     document.getElementById('firstScreen').style.animation = 'hideFirstScreen forwards 2s';
-//     setTimeout(function(){
-//         document.getElementById('mainScreen').style.display = 'initial';
-//         document.getElementById('mainScreen').style.animation = 'showMain forwards 2s';
-//     },2000);
-// })
+// Intersection Observer 設定
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            if(entry.target.classList == 'text-path') {
+                entry.target.style.animation = 'drawText 2s ease-in forwards';
+            } else if(entry.target.classList == 'line-left'||entry.target.classList == 'line-right') {
+                entry.target.style.animation = 'drawLine 2s ease-in forwards';
+            } else if(entry.target.classList == 'appear'){
+                entry.target.style.animation = 'appear 2s ease-in forwards';
+            }
+            observer.unobserve(entry.target); // 一度表示したら監視を解除
+        }
+    });
+}, { threshold: 0.5 }); // 50%以上表示されたら実行
+
+document.addEventListener("DOMContentLoaded", () => {
+    // SVGを監視
+    document.querySelectorAll('.text-path').forEach(element => {
+        observer.observe(element);
+    });
+    document.querySelectorAll('.line-left').forEach(element => {
+        observer.observe(element);
+    });
+    document.querySelectorAll('.line-right').forEach(element => {
+        observer.observe(element);
+    });
+    document.querySelectorAll('.appear').forEach(element => {
+        observer.observe(element);
+    });
+    newsNum = document.getElementById('newsBoxes').childElementCount/2+1|0;
+    now = newsNum/2+newsNum%2;
+    document.getElementById('newsBoxes').children[now].classList.add('selected');
+    document.getElementById('newsBoxes').style.left = now*-24 +25 + 'vw';
+});
+
+function selectNews(direction){
+    if(direction == 'right' && now < newsNum){
+        now++;
+        document.getElementById('newsBoxes').children[now].classList.add('selected');
+        document.getElementById('newsBoxes').children[now-1].classList.remove('selected');
+        document.getElementById('newsBoxes').style.left = now*-24 +25 + 'vw';
+    } else if(direction == 'left' && now > 0){
+        now--;
+        document.getElementById('newsBoxes').children[now].classList.add('selected');
+        document.getElementById('newsBoxes').children[now+1].classList.remove('selected');
+        document.getElementById('newsBoxes').style.left = now*-24 + 25 + 'vw';
+    }
+}

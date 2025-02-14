@@ -1,233 +1,44 @@
+
 *{
     padding: 0;
     margin: 0;
-}
-
-body{
-    width:100%;
-    height:100vh;
-    background-color: rgb(0, 0, 0);
-    color: white;
+    z-index: 1;
 }
 
 html{
     scroll-behavior: smooth;
 }
 
-@font-face {
-    font-family: 'DelaGothicOne';
-    src: url('/fonts/DelaGothicOne-Regular.ttf');
-    font-weight: 1 1000;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Noto+Sans+JP:wght@100..900&display=swap');
-
-
-#firstScreen{
+body{
     width:100%;
     height:100vh;
-    overflow:hidden;
-    transition: 3s;
-    background-color: black;
-}
-
-@keyframes showS{
-    0%{
-        transform: translate(100%,-50%);
-    }
-    100%{
-        transform: translate(0%,-50%);
-    }
-}
-
-@keyframes showSBox{
-    0%{
-        transform: translate(-100%,0%);
-    }
-    100%{
-        transform: translate(0%,0%);
-    }
-}
-
-@keyframes showUzuka{
-    0%{
-        opacity: 0%;
-    }
-    100%{
-        opacity: 100%;
-    }
-}
-
-@keyframes hideFirstScreen{
-    0%{
-        opacity: 100%;
-    }
-    100%{
-        opacity: 0%;
-        display: none;
-    }
-}
-
-#showSBox{
-    width: 100%;
-    height: 100%;
-    animation: showSBox forwards 3s;
-    overflow: hidden;
-}
-
-#s{
-    width:150%;
-    position: absolute;
-    left:-48%;
-    top: 52%;
-    animation: showS forwards 3s;
+    background-color: rgb(80, 80, 80);
     color: white;
-    filter: drop-shadow(0 0 2px white);
+    overflow-x: hidden;
+    opacity: 0;
+    animation: fadeIn 5s forwards;
 }
 
-#uzuka{
-    width: 100%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    animation: showUzuka forwards 3s;
-    filter: drop-shadow(0 0 2px white);
-}
-
-@keyframes showMain{
-    0%{
-        opacity: 0%;
+@keyframes fadeIn{
+    from{
+        opacity: 0;
     }
-    100%{
-        opacity: 100%;
+    to{
+        opacity: 1;
     }
 }
 
-.main{
-    background-color: rgb(0, 0, 0);
-    width: 100%;
-    height: 100vh;
+.appear{
+    opacity: 0;
 }
 
-body::-webkit-scrollbar {
-    width: 1vw;
-}
-
-body::-webkit-scrollbar-thumb {
-    background: #ffffff;
-    width: 0.5vw;
-    border-radius: 1vw;
-}
-
-.menuBar{
-    background-color: rgb(0, 0, 0);
-    width: 100%;
-    height: 15vh;
-    position:fixed;
-    filter: drop-shadow(0 0 1vw black);
-    top: 0;
-    opacity: 90%;
-    z-index: 10;
-    display: flex;
-    vertical-align: middle;
-}
-
-#title{
-    color: white;
-    font-family: 'DelaGothicOne';
-    position: absolute;
-    right:3%;
-    bottom:10%;
-    font-size: 7.5vw;
-    filter: drop-shadow(0 0 1vw black);
-    z-index: 2;
-}
-
-.top{
-    width: 100%;
-    height: 100vh;
-    background-color: white;
-    scroll-snap-align: start;
-}
-
-.news{
-    width: 100%;
-    height: 125vh;
-    background-color: rgb(0, 0, 0);
-    scroll-snap-align: start;
-}
-
-.bottom-gradation{
-    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,1));
-    width:100%;
-    height: 50vh;
-    z-index: 1;
-}
-
-#bg1{
-    position: absolute;
-    bottom: 0;
-}
-
-#logo{
-    margin-top: auto;
-    margin-bottom: auto;
-    height: 10vw;
-    max-height: 15vh;
-    filter: invert(100%);
-    padding-left: 1vw;
-}
-
-#projectName{
-    margin-top: auto;
-    margin-bottom: auto;
-    padding-left: 2vw;
-    font-size: 4vw;
-    font-family: 'DelaGothicOne';
-}
-
-#sectionTitle1{
-    color: white;
-    font-family: 'DelaGothicOne';
-    position: absolute;
-    left:5%;
-    top:125%;
-    font-size: 5vw;
-    filter: drop-shadow(0 0 1vw black);
-    z-index: 1;
-}
-
-#sectionTitle2{
-    color: white;
-    font-family: 'DelaGothicOne';
-    position: absolute;
-    left:5%;
-    top:250%;
-    font-size: 5vw;
-    filter: drop-shadow(0 0 1vw black);
-    z-index: 1;
-}
-
-.links{
-    margin-left: auto;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-.links a{
-    font-size: 1.5vw;
-    font-family: "Noto Sans JP", serif;
-    padding-right: 3vw;
-    color: #ffffff;
-    text-decoration: underline;
-    font-weight: bold;
-    text-underline-offset:0.5vw;
-}
-
-.activity{
-    height: 150vh;
-    background-color: rgb(0, 0, 0);
+@keyframes appear{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 
 #toTop{
@@ -243,51 +54,225 @@ body::-webkit-scrollbar-thumb {
     padding: 1vw;
 }
 
-#logo2{
-    position:absolute;
-    transform: translate(-50%,-50%);
-    left: 50%;
-    top: 50vh;
-    width: 50vw;
+/* スクロールバー */
+body::-webkit-scrollbar {
+    width: 1vw;
 }
 
-
-#achievements h1{
-    font-size: 8vw;
-    letter-spacing: 1vw;
-    font-family: 'DelaGothicOne';
-    padding-left: 5vw;
-    width: 30vw;
+body::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    width: 0.5vw;
+    border-radius: 1vw;
 }
 
-#achievements hr{
+/* メニュー */
+.menuBar{
+    position: fixed;
+    background-color: rgb(60, 60, 60);
     width: 100%;
-    height: 1vw;
-    border: none;
-    background-color: white;
+    height: 10vw;
+    z-index: 4;
+}
+
+.menuBar p{
+    font-size: 4vw;
+    text-align: center;
+    line-height: 10vw;
+    float: left;
+    font-family: 'Dela Gothic One', serif;
+    margin-left: 1vw;
+}
+
+.menuBar img{
+    width: 10vw;
+    height: 10vw;
+    float: left;
+    filter: invert(100%);
+    margin-left: 1vw;
+}
+
+.menuBar .links{
+    float: right;
+    margin-right: 1.5vw;
+}
+.menuBar .links a{
+    font-size: 2vw;
+    font-family: "Noto Serif JP", serif;
+    text-decoration: underline;
+    font-weight: bold;
+    text-underline-offset:0.5vw;
+    color: white;
+    line-height: 10vw;
+    padding: 0.5vw;
+}
+
+/* メイン */
+
+/* Top */
+.top{
+    width: 100%;
+    height: calc(100vh - 10vw);
+    background-color: rgb(255, 255, 255);
+}
+
+.top .bottom-gradation{
+    background: linear-gradient(rgba(80,80,80,0),rgba(80,80,80,0),rgba(80,80,80,1));
+    width:100%;
+    height: 50vh;
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+}
+
+.top img{
+    position: absolute;
+    width: 50vw;
+    left: 50vw;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.top p{
+    position: absolute;
+    font-size: 7.5vw;
+    text-align: center;
+    font-family: 'Dela Gothic One', serif;
+    margin-top: 1vw;
+    filter: drop-shadow(0 0 1vw black);
+    right: 5vw;
+    bottom: 5vh;
+    z-index: 3;
+}
+
+/* sectionTitle */
+.sectionTitle{
+    display: flex;
+}
+
+.line-left{
+    height:1vw;
+    border: 0.25vw solid white;
+    width: 10%;
     margin-top: auto;
     margin-bottom: auto;
-    margin-right: 5vw;
+    margin-right: 2vw;
+    margin-left: 2vw;
+    opacity: 0;
 }
 
-#achievements h2{
-    font-size: 4vw;
-    font-family: 'DelaGothicOne';
-    padding-left: 5vw;
-    width: 30vw;
+.line-right{
+    height:1vw;
+    border: 0.25vw solid white;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 2vw;
+    margin-left: 2vw;
+    opacity: 0;
 }
 
-#achievements p{
-    font-size: 2vw;
-    padding-left: 5vw;
-    font-weight: bold;
+.text-path {
+    font-family: "Dela Gothic One", sans-serif;
+    stroke-dasharray: 100vw;
+    stroke-dashoffset: 100vw;
+    opacity: 0;
 }
 
-#achievements .spacer{
-    height: 5vw;
+@keyframes drawText {
+    to {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
 }
 
-.footer{
-    height:30vw;
+@keyframes drawLine{
+    to {
+        opacity: 1;
+    }
+}
+
+/* News */
+.news{
+    padding-bottom: 10vw;
+}
+
+#newsBoxes{
+    position: relative;
+    display: flex;
+    left:10vw;
+    padding-top: 10vw;
+    transition: 1s;
+}
+
+.newsBox{
+    flex-shrink: 0;
+    width:20vw;
+    height: 20vw;
     background-color: white;
+    border-radius: 10%;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    transition: 1s;
+}
+
+.newsBox p{
+    color: black;
+}
+
+.selected{
+    scale:175%;
+    margin-left: 15vw;
+    margin-right: 15vw;
+}
+
+.newsArrow{
+    width: 5vw;
+}
+
+.newsArrow:active{
+    filter: invert(100%);
+}
+
+#newsArrowRight{
+    position: absolute;
+    right: 22vw;
+    top:calc(100vh + 35vw);
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
+
+#newsArrowLeft{
+    position: absolute;
+    left: 23vw;
+    top:calc(100vh + 35vw);
+    transform: translate(50%, -50%);
+    z-index: 4;
+}
+
+/*Achievements*/
+.achievements p{
+    font-weight: bold;
+    padding-left: 5vw;
+    font-size: 3vw;
+}
+
+.achievements svg{
+    padding-left: 2vw;
+}
+
+/*Footer*/
+.footer{
+    background-color: white;
+    width: 100%;
+    height: 30vw;
+    color: rgb(80, 80, 80);
+    display: flex;
+}
+
+.footer p{
+    margin-top: auto;
+    margin-left: 3vw;
+    font-size: 3vw;
+    font-weight: bold;
 }
