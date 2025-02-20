@@ -261,6 +261,26 @@ body::-webkit-scrollbar-thumb {
     padding-left: 2vw;
 }
 
+/*Blog*/
+#fileList li{
+    font-weight: bold;
+    padding-left: 3vw;
+    font-size: 3vw;
+    text-decoration: underline;
+    text-underline-offset: 0.5vw;
+    width: 100%;
+}
+
+#fileList li:hover{
+    color: rgb(80, 80, 80);
+    background-color: white;
+    border-radius: 1vw;
+    padding: 0.5vw;
+    margin-left: 2.5vw;
+    transition: 0.5s;
+    width: 90%;
+}
+
 /*Footer*/
 .footer{
     background-color: white;

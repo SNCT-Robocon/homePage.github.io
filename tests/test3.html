@@ -11,7 +11,7 @@
 
     <script>
         // GitHub APIのURLを指定します
-        const apiUrl = 'https://api.github.com/repos/SNCT-Robocon/homePage.github.io/contents/md'; // ここを変更
+        const apiUrl = 'https://api.github.com/repos/SNCT-Robocon/homePage.github.io/contents/md'; 
 
         fetch(apiUrl)
             .then(response => {
@@ -36,7 +36,8 @@
                 data.forEach(file => {
                     if (file.name.endsWith('.md')) { // .mdファイルのみを表示
                         const listItem = document.createElement('li');
-                        listItem.textContent = `ファイル名: ${file.name}, パス: ${file.download_url}`;
+                        const fileName = file.name.replace('.md', '');
+                        listItem.textContent = `ファイル名: ${fileName}, パス: ${file.download_url}`;
                         fileList.appendChild(listItem);
                     }
                 });

@@ -1,6 +1,43 @@
 newsNum = 0;
 now=0;
 
+const apiUrl = 'https://api.github.com/repos/SNCT-Robocon/homePage.github.io/contents/md'; 
+
+fetch(apiUrl)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('ネットワークエラー: ' + response.statusText);
+        }
+        return response.json();
+    })
+    .then(data => {
+        const fileList = document.getElementById('fileList');
+
+        // 表示をクリア
+        fileList.innerHTML = '';
+
+        // ファイル数
+        const fileCount = data.length;
+
+        // 各ファイルの名前とパスを表示
+        data.forEach(file => {
+            if (file.name.endsWith('.md')) { 
+                //パス:file.download_url
+                const listItem = document.createElement('li');
+                const fileName = file.name.replace('.md', '');
+                listItem.textContent = fileName;
+                fileList.appendChild(listItem);
+                listItem.onclick = () => {
+                    alert(fileName);
+                    openMarkdownPage(file.download_url,fileName);
+                };
+            }
+        });
+    })
+    .catch(error => {
+        console.error('エラー:', error);
+    });
+
 // Intersection Observer 設定
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -48,5 +85,39 @@ function selectNews(direction){
         document.getElementById('newsBoxes').children[now].classList.add('selected');
         document.getElementById('newsBoxes').children[now+1].classList.remove('selected');
         document.getElementById('newsBoxes').style.left = now*-24 + 25 + 'vw';
+    }
+}
+
+//md to html
+async function openMarkdownPage(pass,name) {
+    const response = await fetch(pass); // 読み込む Markdown ファイル
+    const text = await response.text();
+    const htmlContent = DOMPurify.sanitize(marked.parse(text)); // Markdown を HTML に変換
+
+    
+    // 新しいウィンドウを開く
+    const newWindow = window.open("", "_blank");
+    if (newWindow) {
+        newWindow.document.write(`
+                <!DOCTYPE html>
+                <html lang="ja">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>${name}</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
+                    </style>
+                </head>
+                <body>
+                    <h1>${name}</h1>
+                    <p>ファイルのダウンロード URL: <a href="${fileUrl}" target="_blank">${fileUrl}</a></p>
+                    <div id="content">${htmlContent}</div>
+                </body>
+                </html>
+            `);
+        newWindow.document.close(); // 書き込み完了
+    } else {
+        alert("ポップアップがブロックされました。許可してください。");
     }
 }
