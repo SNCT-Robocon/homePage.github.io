@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDファイルリスト</title>
+</head>
+<body>
+    <h1>MDファイルのリスト</h1>
+    <ul id="fileList"></ul>
+
+    <script>
+        // GitHub APIのURLを指定します
+        const apiUrl = 'https://api.github.com/repos/SNCT-Robocon/homePage.github.io/contents/md'; // ここを変更
+
+        fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('ネットワークエラー: ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                const fileList = document.getElementById('fileList');
+
+                // 表示をクリア
+                fileList.innerHTML = '';
+
+                // ファイル数を表示
+                const fileCount = data.length;
+                const countItem = document.createElement('li');
+                countItem.textContent = `ファイル数: ${fileCount}`;
+                fileList.appendChild(countItem);
+
+                // 各ファイルの名前とパスを表示
+                data.forEach(file => {
+                    if (file.name.endsWith('.md')) { // .mdファイルのみを表示
+                        const listItem = document.createElement('li');
+                        listItem.textContent = `ファイル名: ${file.name}, パス: ${file.download_url}`;
+                        fileList.appendChild(listItem);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('エラー:', error);
+            });
+    </script>
+</body>
+</html>
