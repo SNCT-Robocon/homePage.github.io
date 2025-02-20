@@ -111,7 +111,6 @@ async function openMarkdownPage(pass,name) {
                 </head>
                 <body>
                     <h1>${name}</h1>
-                    <p>ファイルのダウンロード URL: <a href="${fileUrl}" target="_blank">${fileUrl}</a></p>
                     <div id="content">${htmlContent}</div>
                 </body>
                 </html>
