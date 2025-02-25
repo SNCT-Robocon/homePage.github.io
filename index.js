@@ -1,7 +1,7 @@
 newsNum = 0;
 now=0;
 
-const apiUrl = 'https://api.github.com/repos/SNCT-Robocon/homePage.github.io/contents/md'; 
+const apiUrl = 'https://api.github.com/repos/SNCT-Robocon/homePage.github.io/contents/blog'; 
 
 fetch(apiUrl)
     .then(response => {
@@ -21,7 +21,7 @@ fetch(apiUrl)
 
         // 各ファイルの名前とパスを表示
         data.forEach(file => {
-            if (file.name.endsWith('.md')) { 
+            if (file.name.endsWith('.html')) { 
                 //パス:file.download_url
                 const listItem = document.createElement('li');
                 const fileName = file.name.replace('.md', '');
@@ -29,7 +29,7 @@ fetch(apiUrl)
                 fileList.appendChild(listItem);
                 listItem.onclick = () => {
                     alert(fileName);
-                    openMarkdownPage(file.download_url,fileName);
+                    window.open(file.download_url, "_blank");
                 };
             }
         });
@@ -89,34 +89,34 @@ function selectNews(direction){
 }
 
 //md to html
-async function openMarkdownPage(pass,name) {
-    const response = await fetch(pass); // 読み込む Markdown ファイル
-    const text = await response.text();
-    const htmlContent = DOMPurify.sanitize(marked.parse(text)); // Markdown を HTML に変換
+// async function openMarkdownPage(pass,name) {
+//     const response = await fetch(pass); // 読み込む Markdown ファイル
+//     const text = await response.text();
+//     const htmlContent = DOMPurify.sanitize(marked.parse(text)); // Markdown を HTML に変換
 
     
-    // 新しいウィンドウを開く
-    const newWindow = window.open("", "_blank");
-    if (newWindow) {
-        newWindow.document.write(`
-                <!DOCTYPE html>
-                <html lang="ja">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>${name}</title>
-                    <style>
-                        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
-                    </style>
-                </head>
-                <body>
-                    <h1>${name}</h1>
-                    <div id="content">${htmlContent}</div>
-                </body>
-                </html>
-            `);
-        newWindow.document.close(); // 書き込み完了
-    } else {
-        alert("ポップアップがブロックされました。許可してください。");
-    }
-}
+//     // 新しいウィンドウを開く
+//     const newWindow = window.open("", "_blank");
+//     if (newWindow) {
+//         newWindow.document.write(`
+//                 <!DOCTYPE html>
+//                 <html lang="ja">
+//                 <head>
+//                     <meta charset="UTF-8">
+//                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//                     <title>${name}</title>
+//                     <style>
+//                         body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
+//                     </style>
+//                 </head>
+//                 <body>
+//                     <h1>${name}</h1>
+//                     <div id="content">${htmlContent}</div>
+//                 </body>
+//                 </html>
+//             `);
+//         newWindow.document.close(); // 書き込み完了
+//     } else {
+//         alert("ポップアップがブロックされました。許可してください。");
+//     }
+// }
