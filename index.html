@@ -1,217 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鈴鹿ロボコン</title>
-    <link rel="icon" href="roboconLogo.png">
-    <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=M+PLUS+Rounded+1c&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
-    <script src="index.js"></script>
-    <meta property="og:description" content="鈴鹿高専ロボコンホームページ" />
-    <meta property="og:site_name" content="suzuka-robocon" />
-    <meta property="og:image" content="images/roboconLogo.png" />
-    <meta property="og:url" content="https://snct-robocon.github.io/homePage.github.io/" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/2.1.3/marked.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.3/purify.min.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+        <title>鈴鹿ロボコン</title>
+        <link rel="icon" href="images/roboconLogo.png">
+        <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=M+PLUS+Rounded+1c&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+        <script src="index.js"></script>
+        <meta property="og:description" content="鈴鹿高専ロボコンホームページ" />
+        <meta property="og:site_name" content="suzuka-robocon" />
+        <meta property="og:image" content="images/roboconLogo.png" />
+    </head>
 <body>
-
-    <!--Go to Top Button-->
-    <a href="#top"><img id="toTop" src="goTop.png"></img></a>
-    
-    <!--Menu Bar-->
-    <div class="menuBar">
-        <img src="roboconLogo.png" alt="ロゴ">
-        <p>鈴鹿ロボコン</p>
-        <div class="links">
-            <a href="#news">お知らせ</a>
-            <a href="#activity">活動内容</a>
-            <a href="#achievements">実績</a>
-            <a href="#blog">ブログ</a>
-            <a href="#sponsor">スポンサー</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe4SV7m7DdxmEcT1XY_8rWoGAjTDcJNrvhblw1bFeSVc2NOhw/viewform?usp=dialog">お問い合わせ</a>
+    <nav class="menu">
+        <img src="images/roboconLogo.png" id="logo">
+        <div id="title">
+            <p id="school">鈴鹿工業高等専門学校</p>
+            <p id="team">ロボコンプロジェクト</p>
         </div>
-    </div>
-    <div style="height:10vw"></div>
+        <ul>
+            <li><a href="index.html">トップ</a></li>
+            <li><a href="about.html">お知らせ</a></li>
+            <li><a href="news.html">団体概要</a></li>
+            <li><a href="members.html">実績</a></li>
+            <li><a href="works.html">スポンサー</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+    </nav>
 
-    <!--Content-->
-    <div>
-        <!--Top-->
+    <div class="content">
         <div class="top">
-            <img src="roboconLogo.png" alt="ロゴ">
-            <p>鈴鹿ロボコン</p>
-            <div class="bottom-gradation"></div>
-        </div>
-
-        <!--News-->
-        <div class="news">
-            <p id="news" style="padding-top: 10vw;margin-top: -10vw;"></p>
-            <div class="sectionTitle">
-                <hr class="line-left">
-                <svg width="55vw" height="15vw">
-                    <text x="0" y="10vw" font-size="7.5vw" font-family="Dela Gothic One, sans-serif" fill="none" stroke="white" stroke-width="2" class="text-path">
-                        お知らせ
-                    </text>
-                </svg>
-                <hr class="line-right">
+            <div class="motto">
+                <p>大賞・優勝を目指して</p><br>
+                <p>日々活動しています</p>
             </div>
-            <div class="appear">
-                <img src="leftarrow.png" alt="" id="newsArrowLeft" onclick="selectNews('left')" class="newsArrow">
-                <img src="rightarrow.png" alt="" id="newsArrowRight" onclick="selectNews('right')" class="newsArrow">
-                <div id="newsBoxes">
-                    <div class="newsBox">
-                        <p>2025/2/14</p>
-                        <p>テスト1</p>
-                    </div>
-                    <div class="newsBox">
-                        <p>2025/2/14</p>
-                        <p>テスト2</p>
-                    </div>
-                    <div class="newsBox">
-                        <p>2025/2/14</p>
-                        <p>テスト3</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--Activity-->
-        <div class="activity">
-            <p id="activity" style="padding-top: 10vw;margin-top: -10vw;"></p>
-            <div class="sectionTitle">
-                <hr class="line-left">
-                <svg width="55vw" height="15vw">
-                    <text x="0" y="10vw" font-size="7.5vw" font-family="Dela Gothic One, sans-serif" fill="none" stroke="white" stroke-width="2" class="text-path">
-                        活動内容
-                    </text>
-                </svg>
-                <hr class="line-right">
-            </div>
-        </div>
-
-        <!--Achievements-->
-        <div class="achievements">
-            <p id="achievements" style="padding-top: 10vw;margin-top: -10vw;"></p>
-            <div class="sectionTitle">
-                <hr class="line-left">
-                <svg width="22vw" height="15vw">
-                    <text x="0" y="10vw" font-size="7.5vw" font-family="Dela Gothic One, sans-serif" fill="none" stroke="white" stroke-width="2" class="text-path">
-                        実績
-                    </text>
-                </svg>
-                <hr class="line-right">
-            </div>
-            <div class="appear">
-                <svg width="27vw" height="10vw">
-                    <text x="0" y="6.6vw" font-size="5vw" font-family="Dela Gothic One, sans-serif" fill="none" stroke="white" stroke-width="2" class="text-path">
-                        2023
-                    </text>
-                </svg>
-                <p>第36回 - ベスト8  技術賞</p>
-            </div>
-            <div class="appear">
-                <svg width="27vw" height="10vw">
-                    <text x="0" y="6.6vw" font-size="5vw" font-family="Dela Gothic One, sans-serif" fill="none" stroke="white" stroke-width="2" class="text-path">
-                        2022
-                    </text>
-                </svg>
-                <p>第35回 - ベスト16</p>
-            </div>
-            <div class="appear">
-                <svg width="27vw" height="10vw">
-                    <text x="0" y="6.6vw" font-size="5vw" font-family="Dela Gothic One, sans-serif" fill="none" stroke="white" stroke-width="2" class="text-path">
-                        2021
-                    </text>
-                </svg>
-                <p>第34回 - 第5位 特別賞(本田技研工業株式会社)</p>
-            </div>
-            <div class="appear">
-                <svg width="27vw" height="10vw">
-                    <text x="0" y="6.6vw" font-size="5vw" font-family="Dela Gothic One, sans-serif" fill="none" stroke="white" stroke-width="2" class="text-path">
-                        2019
-                    </text>
-                </svg>
-                <p>第32回 - ベスト16   特別賞(セメダイン株式会社)</p>
-            </div>
-            <div class="appear">
-                <svg width="27vw" height="10vw">
-                    <text x="0" y="6.6vw" font-size="5vw" font-family="Dela Gothic One, sans-serif" fill="none" stroke="white" stroke-width="2" class="text-path">
-                        2018
-                    </text>
-                </svg>
-                <p>第31回 - ベスト16</p>
-            </div>
-            <div class="appear">
-                <svg width="27vw" height="10vw">
-                    <text x="0" y="6.6vw" font-size="5vw" font-family="Dela Gothic One, sans-serif" fill="none" stroke="white" stroke-width="2" class="text-path">
-                        2014
-                    </text>
-                </svg>
-                <p>第27回 - アイデア賞</p>
-            </div>
-            <div class="appear">
-                <svg width="27vw" height="10vw">
-                    <text x="0" y="6.6vw" font-size="5vw" font-family="Dela Gothic One, sans-serif" fill="none" stroke="white" stroke-width="2" class="text-path">
-                        2013
-                    </text>
-                </svg>
-                <p>第26回 - シャル・ウィ・ジャンプ賞</p>
-            </div>
-            <div class="appear">
-                <svg width="27vw" height="10vw">
-                    <text x="0" y="6.6vw" font-size="5vw" font-family="Dela Gothic One, sans-serif" fill="none" stroke="white" stroke-width="2" class="text-path">
-                        2013
-                    </text>
-                </svg>
-                <p>第25回 - 特別賞(本田技研工業株式会社)</p>
-            </div>
-            <div class="appear">
-                <svg width="27vw" height="10vw">
-                    <text x="0" y="6.6vw" font-size="5vw" font-family="Dela Gothic One, sans-serif" fill="none" stroke="white" stroke-width="2" class="text-path">
-                        2004
-                    </text>
-                </svg>
-                <p>第17回 - アイデア倒れ賞</p>
-            </div>
-        </div>
-
-        <!--Blog-->
-        <div class="blog">
-            <p id="blog" style="padding-top: 10vw;margin-top: -10vw;"></p>
-            <div class="sectionTitle">
-                <hr class="line-left">
-                <svg width="38vw" height="15vw">
-                    <text x="0" y="10vw" font-size="7.5vw" font-family="Dela Gothic One, sans-serif" fill="none" stroke="white" stroke-width="2" class="text-path">
-                        ブログ
-                    </text>
-                </svg>
-                <hr class="line-right">
-            </div>
-            <ul id="fileList"></ul>
-        </div>
-
-        <!--Sponsor-->
-        <div class="sponsor">
-            <p id="sponsor" style="padding-top: 10vw;margin-top: -10vw;"></p>
-            <div class="sectionTitle">
-                <hr class="line-left">
-                <svg width="80vw" height="15vw">
-                    <text x="0" y="10vw" font-size="7.5vw" font-family="Dela Gothic One, sans-serif" fill="none" stroke="white" stroke-width="2" class="text-path">
-                        スポンサー
-                    </text>
-                </svg>
-                <hr class="line-right">
-            </div>
-            <p style="padding-left: 3vw;">まだスポンサーはいません</p>
         </div>
     </div>
 
-    <!--Footer-->
     <div class="footer">
-        <p>鈴鹿工業高等専門学校ロボコンプロジェクト</p>
     </div>
 </body>
 </html>
