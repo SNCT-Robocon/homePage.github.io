@@ -35,14 +35,14 @@
         const loader = new THREE.GLTFLoader();
         loader.load('untitled.glb', function (gltf) {
             const model = gltf.scene;
-            model.scale.set(2, 2, 2); // 必要に応じてモデルのスケールを調整
+            model.scale.set(1.5, 1.5, 1.5); // 必要に応じてモデルのスケールを調整
             scene.add(model);
         }, undefined, function (error) {
             console.error(error);
         });
 
         // カメラの位置を調整
-        camera.position.x = 5;
+        camera.position.x = -5;
         camera.position.y = 5;
         camera.position.z = 10;
 
