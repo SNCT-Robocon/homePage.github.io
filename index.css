@@ -20,7 +20,7 @@ body{
 
 @font-face {
     font-family: 'yorusugaraver';
-    src: url();
+    src: url(yosugaraver1_2.ttf);
 }
 
 .menu{
@@ -41,7 +41,7 @@ body{
 .menu ul li a{
     margin-right: 3vw;
     list-style: none;
-    font-size: 1.75vw;
+    font-size: 1.5vw;
     scale: 1 1.2;
     text-decoration: none;
     text-decoration: underline;
@@ -87,14 +87,23 @@ body{
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 10vw;
+    width: 39vw;
+    flex-shrink: 0;
 }
 
 .motto p{
     display: inline-block;
-    background:linear-gradient(transparent 50%, rgba(230, 250, 12, 0.75) 0%);
+    background:linear-gradient(transparent 50%, rgba(230, 250, 12, 0.70) 0%);
     color: rgb(255, 255, 255);
-    font-weight: bold;
-    font-size: 4vw;
+    font-size: 5vw;
     margin-top: 1vw;
     margin-bottom: 1vw;
+    font-family: 'yorusugaraver';
+}
+
+.top iframe{
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    z-index: 0;
 }

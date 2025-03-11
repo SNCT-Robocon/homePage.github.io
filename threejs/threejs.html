@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js 3Dモデル表示 - 操作可能</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+    <script>
+        // シーン、カメラ、レンダラーを作成
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0x000000, 0); // 背景色を透明に
+        document.body.appendChild(renderer.domElement);
+
+        // 照明を追加
+        const light = new THREE.DirectionalLight(0xffffff, 10);
+        light.position.set(10, 10, 10).normalize();
+        scene.add(light);
+
+        const ambientLight = new THREE.AmbientLight(0x404040, 1.5); // 全体を照らすアンビエントライト
+        scene.add(ambientLight);
+
+        // GLTFLoaderを使ってモデルをロード
+        const loader = new THREE.GLTFLoader();
+        loader.load('untitled.glb', function (gltf) {
+            const model = gltf.scene;
+            model.scale.set(2, 2, 2); // 必要に応じてモデルのスケールを調整
+            scene.add(model);
+        }, undefined, function (error) {
+            console.error(error);
+        });
+
+        // カメラの位置を調整
+        camera.position.x = 5;
+        camera.position.y = 5;
+        camera.position.z = 10;
+
+        // OrbitControls を作成してカメラとレンダラーをリンク
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true; // 遅延効果を有効化
+        controls.dampingFactor = 0.05; // 遅延の速度
+        controls.screenSpacePanning = false; // 画面上でパン操作を無効化
+        controls.maxPolarAngle = Math.PI / 2; // 縦方向の回転制限（下方向の回転を制限）
+
+        // アニメーションループ
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            // 必要に応じてコントロールを更新
+            controls.update();
+
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        // ウィンドウサイズ変更時にレンダラーとカメラを調整
+        window.addEventListener('resize', () => {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            renderer.setSize(width, height);
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+        });
+    </script>
+</body>
+</html>
