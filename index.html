@@ -16,18 +16,19 @@
     </head>
 <body>
     <nav class="menu">
-        <img src="images/roboconLogo.png" id="logo">
+        <div id="logo"></div>
         <div id="title">
             <p id="school">鈴鹿工業高等専門学校</p>
             <p id="team">ロボコンプロジェクト</p>
         </div>
         <ul>
-            <li><a href="index.html">トップ</a></li>
-            <li><a href="about.html">お知らせ</a></li>
-            <li><a href="news.html">団体概要</a></li>
-            <li><a href="members.html">実績</a></li>
-            <li><a href="works.html">スポンサー</a></li>
-            <li><a href="contact.html">お問い合わせ</a></li>
+            <li><a href=".top">トップ</a></li>
+            <li><a href="#news">お知らせ</a></li>
+            <li><a href="#activity">団体概要</a></li>
+            <li><a href="#achievements">実績</a></li>
+            <li><a href="#sponsor">スポンサー</a></li>
+            <li><a href="#blog">ブログ</a></li>
+            <li><a href="#">お問い合わせ</a></li>
         </ul>
     </nav>
 
@@ -38,8 +39,10 @@
                 <p>日々活動しています</p>
             </div>
             <iframe src="threejs/threejs.html" frameborder="0"></iframe>
-            <p id="scrollMessage"> <span>\</span> クリックしてスクロール <span>/</span></p>
-            <img src="images/leftArrow.png" id="scrollToNews" onclick="scrollToNews()">
+            <div class="scrollBox1"></div>
+            <div class="scrollBox2"></div>
+            <div class="scrollBox3"></div>
+            <div class="scrollBox4"></div>
         </div>
 
         <!--News-->
@@ -81,7 +84,7 @@
                 <hr class="line-left">
                 <svg width="55vw" height="15vw">
                     <text x="0" y="10vw" font-size="7.5vw" font-family="Dela Gothic One, sans-serif" fill="none" stroke="white" stroke-width="2" class="text-path">
-                        活動内容
+                        団体概要
                     </text>
                 </svg>
                 <hr class="line-right">

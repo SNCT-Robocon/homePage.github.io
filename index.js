@@ -79,16 +79,30 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function selectNews(direction){
-    if(direction == 'right' && now < newsNum){
-        now++;
-        document.getElementById('newsBoxes').children[now].classList.add('selected');
-        document.getElementById('newsBoxes').children[now-1].classList.remove('selected');
-        document.getElementById('newsBoxes').style.left = now*-24 +25 + 'vw';
-    } else if(direction == 'left' && now > 0){
-        now--;
-        document.getElementById('newsBoxes').children[now].classList.add('selected');
-        document.getElementById('newsBoxes').children[now+1].classList.remove('selected');
-        document.getElementById('newsBoxes').style.left = now*-24 + 25 + 'vw';
+    if(direction == 'right'){
+        if(now < newsNum){
+            now++;
+            document.getElementById('newsBoxes').children[now].classList.add('selected');
+            document.getElementById('newsBoxes').children[now-1].classList.remove('selected');
+            document.getElementById('newsBoxes').style.left = now*-24 +25 + 'vw';
+        } else {
+            now = 0;
+            document.getElementById('newsBoxes').children[now].classList.add('selected');
+            document.getElementById('newsBoxes').children[newsNum].classList.remove('selected');
+            document.getElementById('newsBoxes').style.left = now*-24 +25 + 'vw';
+        }
+    } else if(direction == 'left'){
+        if(now > 0){
+            now--;
+            document.getElementById('newsBoxes').children[now].classList.add('selected');
+            document.getElementById('newsBoxes').children[now+1].classList.remove('selected');
+            document.getElementById('newsBoxes').style.left = now*-24 + 25 + 'vw';
+        } else {
+            now = newsNum;
+            document.getElementById('newsBoxes').children[now].classList.add('selected');
+            document.getElementById('newsBoxes').children[0].classList.remove('selected');
+            document.getElementById('newsBoxes').style.left = now*-24 + 25 + 'vw';
+        }
     }
 }
 
