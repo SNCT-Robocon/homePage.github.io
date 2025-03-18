@@ -35,6 +35,18 @@ body::-webkit-scrollbar-thumb {
     border-radius: 1vw;
 }
 
+.appear{
+    opacity: 0;
+}
+
+@keyframes appear{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
 
 /* menu */
 
@@ -283,6 +295,10 @@ body::-webkit-scrollbar-thumb {
     padding-left: 2vw;
 }
 
+#achievements{
+    padding-top: 7vw;
+}
+
 /*Blog*/
 #fileList li{
     font-weight: bold;
@@ -301,4 +317,114 @@ body::-webkit-scrollbar-thumb {
     margin-left: 2.5vw;
     transition: 0.5s;
     width: 90%;
+}
+
+.activity p{
+    font-weight: bold;
+    padding-left: 5vw;
+    font-size: 1.5vw;
+}
+
+/* footer */
+.footer{
+    width: 100%;
+    height: 10vw;
+    background-color: white;
+    bottom: 0;
+    z-index: 10;
+}
+
+.footer p{
+    color: rgb(86, 141, 219);
+    font-size: 1.5vw;
+    font-weight: bold;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 2vw;
+}
+
+/* contact us */
+.contact_form{
+    width: 85vw;
+    background-color: white;
+    border-radius: 20px;
+    margin: 3vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+.contact_form h1{
+    padding:3vw;
+    padding-bottom: 1vw;
+    color: rgb(86, 141, 219);
+}
+
+.contact_form p{
+    padding-bottom: 1vw;
+    padding-left: 3vw;
+    color: rgb(219, 86, 86);
+}
+
+.contact_form span{
+    color: rgb(219, 86, 86);
+}
+
+.contact_form label{
+    color: rgb(86, 141, 219);
+    font-size: 2vw;
+    font-weight: bold;
+    margin-left: 3vw;
+}
+
+.contact_form input{
+    width: calc(100% - 6vw);
+    margin: 1vw;
+    font-size: 2vw;
+    border: none;
+    border-bottom: solid 0.1vw rgb(86, 141, 219);
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
+
+.contact_form input:focus{
+    outline: none;
+}
+
+.contact_form div{
+    display: flex;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+.contact_form div label{
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 1vw;
+    color: rgb(84, 84, 84);
+    font-size: 1.5vw;
+}
+
+.contact_form div input{
+    width: 1.5vw;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin:0;
+    margin-left: 3vw;
+}
+
+.contact_form fieldset{
+    border: none;
+}
+
+.contact_form #submit{
+    width: calc(100% - 6vw);
+    height: 3.5vw;
+    background-color: rgb(86, 141, 219);
+    color: white;
+    font-size: 1.5vw;
+    font-weight: bold;
+    border: none;
+    border-radius: 1vw;
+    margin-left: 3vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
 }

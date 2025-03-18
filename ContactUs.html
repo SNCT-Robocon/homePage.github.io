@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>お問い合わせ | 鈴鹿高専ロボコン</title>
+    <link rel="icon" href="images/roboconLogo.png">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=M+PLUS+Rounded+1c&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+    <script src="index.js"></script>
+    <meta property="og:description" content="お問い合わせ" />
+    <meta property="og:site_name" content="鈴鹿高専ロボコンプロジェクト" />
+    <meta property="og:image" content="images/roboconLogo.png" />
+</head>
+<body>
+    <nav class="menu">
+        <div id="logo"></div>
+        <div id="title">
+            <p id="school">鈴鹿工業高等専門学校</p>
+            <p id="team">ロボコンプロジェクト</p>
+        </div>
+        <ul>
+            <li><a href="index.html#top">トップ</a></li>
+            <li><a href="index.html#news">お知らせ</a></li>
+            <li><a href="index.html#activity">団体概要</a></li>
+            <li><a href="achievements.html">実績</a></li>
+            <li><a href="index.html#sponsor">スポンサー</a></li>
+            <li><a href="index.html#blog">ブログ</a></li>
+            <li><a href="ContactUs.html">お問い合わせ</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <p style="padding-top: 7vw;"></p>
+
+        <form action="https://script.google.com/macros/s/AKfycbzRQoGwG4AZzUIqCV4fYJ76mTBaQ84Nb0BdyqNbdXZ3AQykh9EGti3LUQGBJs3yZ0wr/exec" class="contact_form">
+            <h1>お問い合わせ</h1>
+
+            <p>「*」がついた質問は解答が必須です。</p>
+
+            <label for="name">お名前<span>*</span></label><br>
+            <input type="text" name="name" required>
+
+            <label for="affiliation">ご所属</label><br>
+            <input type="text" name="affiliation">
+
+            <label for="type">お問い合わせの種類をご選択ください<span>*</span></label><br>
+            <fieldset>
+                <div>
+                    <input type="radio" name="type" value="ご支援をご検討の方からのお問い合わせ" id="support" required>
+                    <label for="support">ご支援をご検討の方からのお問い合わせ</label>
+                </div>
+                <div>
+                    <input type="radio" name="type" value="ホームページの内容について" id="homePageContent" required>
+                    <label for="homePageContent">ホームページの内容について</label>
+                </div>
+                <div>
+                    <input type="radio" name="type" value="その他" id="other" required>
+                    <label for="other">その他</label>
+                </div>
+            </fieldset>
+
+            <label for="content">お問い合わせ内容<span>*</span></label><br>
+            <input type="text" name="content" required>
+
+            <input type="submit" value="送信" id="submit">
+        </form>
+    </div>
+</body>
+</html>
