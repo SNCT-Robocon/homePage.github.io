@@ -1,6 +1,3 @@
-newsNum = 0;
-now=0;
-
 const apiUrl = 'https://api.github.com/repos/SNCT-Robocon/homePage.github.io/contents/blog'; 
 const repo = 'https://snct-robocon.github.io/homePage.github.io/'
 
@@ -69,43 +66,11 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('.appear').forEach(element => {
         observer.observe(element);
     });
-
-    
-
-    newsNum = document.getElementById('newsBoxes').childElementCount/2+1|0;
-    now = newsNum/2+newsNum%2;
-    document.getElementById('newsBoxes').children[now].classList.add('selected');
-    document.getElementById('newsBoxes').style.left = now*-24 +25 + 'vw';
 });
 
-function selectNews(direction){
-    if(direction == 'right'){
-        if(now < newsNum){
-            now++;
-            document.getElementById('newsBoxes').children[now].classList.add('selected');
-            document.getElementById('newsBoxes').children[now-1].classList.remove('selected');
-            document.getElementById('newsBoxes').style.left = now*-24 +25 + 'vw';
-        } else {
-            now = 0;
-            document.getElementById('newsBoxes').children[now].classList.add('selected');
-            document.getElementById('newsBoxes').children[newsNum].classList.remove('selected');
-            document.getElementById('newsBoxes').style.left = now*-24 +25 + 'vw';
-        }
-    } else if(direction == 'left'){
-        if(now > 0){
-            now--;
-            document.getElementById('newsBoxes').children[now].classList.add('selected');
-            document.getElementById('newsBoxes').children[now+1].classList.remove('selected');
-            document.getElementById('newsBoxes').style.left = now*-24 + 25 + 'vw';
-        } else {
-            now = newsNum;
-            document.getElementById('newsBoxes').children[now].classList.add('selected');
-            document.getElementById('newsBoxes').children[0].classList.remove('selected');
-            document.getElementById('newsBoxes').style.left = now*-24 + 25 + 'vw';
-        }
-    }
-}
+
 
 function scrollToNews(){
     document.getElementById('news').scrollIntoView({behavior: 'smooth'});
 }
+

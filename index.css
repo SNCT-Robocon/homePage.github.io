@@ -23,6 +23,10 @@ body{
     src: url(yosugaraver1_2.ttf);
 }
 
+.hidden{
+    display: none;
+}
+
 /* スクロールバー */
 
 body::-webkit-scrollbar {
@@ -251,6 +255,36 @@ body::-webkit-scrollbar-thumb {
 
 .newsBox p{
     color: black;
+}
+
+.newsImageRounder{
+    width: 90%;
+    height: 40%;
+    overflow: hidden;
+    border-radius: 1vw;
+    margin-left: 5%;
+    margin-top:5%;
+}
+
+.newsImage{
+    width: 100%;
+    background-color: rgb(86, 141, 219);
+}
+.newsTitle{
+    color: rgb(86, 141, 219);
+    padding-left: 5%;
+}
+
+.newsContent{
+    width: 90%;
+    height: 30%;
+    margin-left: 5%;
+    font-size: 1vw;
+}
+
+.newsDate{
+    color: rgb(86, 141, 219);
+    padding-left: 5%;
 }
 
 .selected{
