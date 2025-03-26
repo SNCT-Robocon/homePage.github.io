@@ -74,3 +74,6 @@ function scrollToNews(){
     document.getElementById('news').scrollIntoView({behavior: 'smooth'});
 }
 
+function toggleMenu(){
+    document.getElementById('menuTable').classList.toggle('hidden');
+}

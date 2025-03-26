@@ -28,17 +28,29 @@
             <li><a href="achievements.html">実績</a></li>
             <li><a href="index.html#sponsor">スポンサー</a></li>
             <li><a href="index.html#blog">ブログ</a></li>
-            <li><a href="ContactUs.html">お問い合わせ</a></li>
+            <div class="menuButton" onclick="toggleMenu()"></div>
         </ul>
     </nav>
 
+    <div class="hidden" id="menuTable">
+        <ul class="menuTable">
+            <li><a href="index.html#top" onclick="toggleMenu()">トップ</a></li>
+            <li><a href="index.html#news" onclick="toggleMenu()">お知らせ</a></li>
+            <li><a href="index.html#activity" onclick="toggleMenu()">団体概要</a></li>
+            <li><a href="achievements.html" onclick="toggleMenu()">実績</a></li>
+            <li><a href="index.html#sponsor" onclick="toggleMenu()">スポンサー</a></li>
+            <li><a href="index.html#blog" onclick="toggleMenu()">ブログ</a></li>
+            <li><a href="ContactUs.html" onclick="toggleMenu()">お問い合わせ</a></li>
+        </ul>
+    </div>
+
     <div class="content">
-        <p style="padding-top: 7vw;"></p>
+        <p style="padding-top: 7vw;" id="top-spacer"></p>
 
         <form action="https://script.google.com/macros/s/AKfycbwfGOM6EgpTOHplpVIrhfzutIv4mPyM2mgnxT9Y0MWNVIxRNAH8WJhWgNzpBd7Plgvk/exec" class="contact_form">
             <h1>お問い合わせ</h1>
 
-            <p>「*」がついた質問は解答が必須です。</p>
+            <p>「*」がついた質問は回答が必須です。</p>
 
             <label for="name">お名前<span>*</span></label><br>
             <input type="text" name="name" required>
