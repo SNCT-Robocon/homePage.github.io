@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/blog.css">
+    <script src="index.js"></script>
+    <meta property="og:site_name" content="鈴鹿高専ロボコンプロジェクト" />
+
+
+
+    <!--  変更可能  -->
+    <title>タイトル</title>
+    <link rel="icon" href="images/タブの画像.png">
+    <meta property="og:description" content="詳細" />
+    <meta property="og:image" content="images/詳細画像.png" />
+    <!--  　　　　  -->
+
+
+
+</head>
+<body>
+    <nav class="menu">
+        <div id="logo"></div>
+        <div id="title">
+            <p id="school">鈴鹿工業高等専門学校</p>
+            <p id="team">ロボコンプロジェクト</p>
+        </div>
+        <ul>
+            <li><a href="index.html#top">トップ</a></li>
+            <li><a href="index.html#news">お知らせ</a></li>
+            <li><a href="index.html#activity">団体概要</a></li>
+            <li><a href="achievements.html">実績</a></li>
+            <li><a href="index.html#sponsor">スポンサー</a></li>
+            <li><a href="index.html#blog">ブログ</a></li>
+            <li><a href="ContactUs.html">お問い合わせ</a></li>
+            <div class="menuButton" onclick="toggleMenu()"></div>
+        </ul>
+    </nav>
+
+    <div class="hidden" id="menuTable">
+        <ul class="menuTable">
+            <li><a href="index.html#top" onclick="toggleMenu()">トップ</a></li>
+            <li><a href="index.html#news" onclick="toggleMenu()">お知らせ</a></li>
+            <li><a href="index.html#activity" onclick="toggleMenu()">団体概要</a></li>
+            <li><a href="achievements.html" onclick="toggleMenu()">実績</a></li>
+            <li><a href="index.html#sponsor" onclick="toggleMenu()">スポンサー</a></li>
+            <li><a href="index.html#blog" onclick="toggleMenu()">ブログ</a></li>
+            <li><a href="ContactUs.html" onclick="toggleMenu()">お問い合わせ</a></li>
+        </ul>
+
+    </div>
+
+    <p class="top-spacer">
+
+    <!-- contentクラスのdiv内に内容を入力してください            -->
+    <!-- #は<h1></h1>　　　　　                                -->
+    <!-- ##は<h2></h2>　　　　　　　                            -->
+    <!-- 文章は<p></p>　　　　　　　                            -->
+    <!-- 画像は<img src="images/画像.png">                     -->
+    <!-- 強調は<b></b>                                         -->
+    
+    <div class="content">
+        <h1>タイトル</h1>
+        <h2>目次</h2>
+        <ul>
+            <li><a href="#見出し1">見出し1</a></li>
+            <li><a href="#見出し2">見出し2</a></li>
+            <li><a href="#見出し3">見出し3</a></li>
+        </ul>
+
+        <h2 id="見出し1">見出し1</h2>
+        <p>内容1</p>
+
+        <h2 id="見出し2">見出し2</h2>
+        <p>内容2</p>
+
+        <h2 id="見出し3">見出し3</h2>
+        <p>内容3</p>
+
+    </div>
+
+
+
+
+    <div class="footer" id="footer">
+        <a href="ContactUs.html">お問い合わせはここのリンクをクリックしてください</a>
+    </div>
+</body>
+</html>
