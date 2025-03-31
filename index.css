@@ -288,8 +288,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .newsDate{
-    color: rgb(86, 141, 219);
+    color: rgb(86, 141, 219)!important;
     padding-left: 5%;
+    font-size: 1.5vw!important;
 }
 
 .selected{

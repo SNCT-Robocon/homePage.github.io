@@ -1,0 +1,339 @@
+*{
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    width:100vw;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+    background-size: 20px 20px; /* グリッドの大きさ */
+    background-color: rgb(88, 148, 233);
+    color: white;
+    overflow-x: hidden;
+    color: rgb(86, 141, 219);
+}
+
+@font-face {
+    font-family: 'yorusugaraver';
+    src: url(yosugaraver1_2.ttf);
+}
+
+.hidden{
+    display: none;
+}
+
+/* スクロールバー */
+
+body::-webkit-scrollbar {
+    width: 1vw;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    width: 0.5vw;
+    border-radius: 1vw;
+}
+
+.appear{
+    opacity: 0;
+}
+
+@keyframes appear{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+/* menu */
+
+.menu{
+    width:100%;
+    height:7vw;
+    background-color: white;
+    display: flex;
+    position:fixed;
+    z-index: 10;
+}
+
+.menu ul{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: auto;
+    text-decoration: none;
+    list-style: none;
+}
+
+.menu ul li a{
+    margin-right: 3vw;
+    list-style: none;
+    font-size: 1.5vw;
+    scale: 1 1.2;
+    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-thickness: 0.25vw;
+    text-underline-offset: 0.5vw;
+    font-weight: bold;
+    color: rgb(86, 141, 219);
+}
+
+.menu #logo{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 1vw;
+    mask: url(images/roboconLogo.png) no-repeat center center / contain;
+    background-color: rgb(86, 141, 219);
+    width: 5vw;
+    height: 5vw;
+}
+
+.menu #title{
+    margin-left: 2vw;
+    margin-top: auto;
+    margin-bottom: auto;
+    line-height: min(2.5vw,30px);
+}
+
+.menu #school{
+    color: rgb(86, 141, 219);
+    font-size: min(1.75vw,20px);
+    font-weight: bold;
+}
+
+.menu #team{
+    color: rgb(86, 141, 219);
+    font-size: min(2.5vw,30px);
+    font-weight: bold;
+}
+
+.menu ul img{
+    display: none;
+}
+
+/* sectionTitle */
+.sectionTitle{
+    display: flex;
+}
+
+.line-left{
+    height:1vw;
+    border: 0.25vw solid white;
+    width: 10%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 2vw;
+    margin-left: 2vw;
+    opacity: 0;
+}
+
+.line-right{
+    height:1vw;
+    border: 0.25vw solid white;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 2vw;
+    margin-left: 2vw;
+    opacity: 0;
+}
+
+.text-path {
+    font-family: "Dela Gothic One", sans-serif;
+    stroke-dasharray: 100vw;
+    stroke-dashoffset: 100vw;
+    opacity: 0;
+}
+
+@keyframes drawText {
+    to {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes drawLine{
+    to {
+        opacity: 1;
+    }
+}
+
+/* footer */
+.footer{
+    width: 100%;
+    height: 10vw;
+    background-color: white;
+    bottom: 0;
+    z-index: 10;
+}
+
+.footer p{
+    color: rgb(86, 141, 219);
+    font-size: 1.5vw;
+    font-weight: bold;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 2vw;
+}
+
+/*  */
+.top-spacer{
+    padding-top: 12vw!important;
+}
+
+.content{
+    padding: 3vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 5vw;
+    background-color: white;
+    width: calc(100% - 16vw);
+    min-height: 80vh;
+    border-radius: 1rem;
+}
+
+h1{
+    color: rgb(86, 141, 219);
+    padding: 1vw;
+}
+
+h2{
+    width: 100%;
+    border-bottom: solid rgb(86, 141, 219);
+    padding-left: 3vw;
+    padding-top: 2vw;
+}
+
+.content a{
+    color: rgb(86, 141, 219);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.content ul{
+    margin:2vw;
+    margin-bottom: 0;
+}
+
+iframe{
+    width: 100%;
+    height: 70vw;
+}
+
+
+/*スマホ用*/
+@media screen and (max-width: 480px) {
+
+    *{
+        overflow-x: hidden;
+    }
+
+    body{
+        font-family: 'arial';
+    }
+
+	.menu{
+        height: 20vw;
+    }
+    
+    .menu ul li a{
+        display: none;
+    }
+    
+    .menu #logo{
+        width: 15vw;
+        height: 15vw;
+    }
+    
+    .menu #title{
+        margin-left: 3vw;
+        line-height: 6vw;
+    }
+    
+    .menu #school{
+        font-size: 3vw;
+        font-family: 'arial';
+    }
+    
+    .menu #team{
+        font-size: 5.5vw;
+        font-family: 'arial';
+    }
+
+    .top{
+        overflow: hidden;
+    }
+
+    .menuButton{
+        display: inline;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-right: 5vw;
+        mask: url(images/menu.png) no-repeat center center / contain;
+        background-color: rgb(86, 141, 219);
+        width: 8vw;
+        height: 8vw;
+    }
+
+    .sectionTitle{
+        margin-bottom: 3vw;
+        margin-top: 3vw;
+    }
+
+    .footer a{
+        font-size: 2.5vw;
+        margin-left: 3vw;
+    }
+
+    #menuTable{
+        position: fixed;
+        height: calc(100% - 20vw);
+        width: 100%;
+        top: 20vw;
+        background-color: whitesmoke;
+        z-index: 2;
+    }
+
+    .menuTable{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .menuTable li a{
+        font-size: 7.5vw;
+        text-decoration: underline;
+        color: rgb(86, 141, 219);
+        font-weight: bold;
+        text-decoration-thickness: 0.75vw;
+        text-underline-offset: 2vw;
+    }
+
+    .menuTable *{
+        padding-left: 5vw;
+        overflow: hidden;
+    }
+    
+    .menuTable :last-child{
+        padding-bottom: 4vh;
+    }
+
+    .menuTable :first-child{
+        padding-top: 4vh;
+    }
+
+
+    #top-spacer{
+        padding-top: 20vw !important;
+    }
+}
