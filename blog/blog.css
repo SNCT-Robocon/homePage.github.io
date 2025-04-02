@@ -90,7 +90,7 @@ body::-webkit-scrollbar-thumb {
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 1vw;
-    mask: url(images/roboconLogo.png) no-repeat center center / contain;
+    mask: url(https://snct-robocon.github.io/homePage.github.io/images/roboconLogo.png) no-repeat center center / contain;
     background-color: rgb(86, 141, 219);
     width: 5vw;
     height: 5vw;
