@@ -26,7 +26,6 @@ fetch(apiUrl)
                 listItem.textContent = fileName;
                 fileList.appendChild(listItem);
                 listItem.onclick = () => {
-                    alert(fileName);
                     window.open(repo+'/blog/'+file.name, "_blank");
                 };
             }
