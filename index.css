@@ -1,18 +1,19 @@
-*{
+* {
     padding: 0;
     margin: 0;
     z-index: 1;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
-    width:100vw;
+body {
+    width: 100vw;
     background-image: linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
-    background-size: 20px 20px; /* グリッドの大きさ */
+        linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+    background-size: 20px 20px;
+    /* グリッドの大きさ */
     background-color: rgb(88, 148, 233);
     color: white;
     overflow-x: hidden;
@@ -23,7 +24,7 @@ body{
     src: url(yosugaraver1_2.ttf);
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
@@ -39,38 +40,39 @@ body::-webkit-scrollbar-thumb {
     border-radius: 1vw;
 }
 
-.appear{
+.appear {
     opacity: 0;
 }
 
-@keyframes appear{
-    from{
+@keyframes appear {
+    from {
         opacity: 0;
     }
-    to{
+
+    to {
         opacity: 1;
     }
 }
 
 /* menu */
 
-.menu{
-    width:100%;
-    height:7vw;
+.menu {
+    width: 100%;
+    height: 7vw;
     background-color: white;
     display: flex;
-    position:fixed;
+    position: fixed;
     z-index: 10;
 }
 
-.menu ul{
+.menu ul {
     display: flex;
     align-items: center;
     height: 100%;
     margin-left: auto;
 }
 
-.menu ul li a{
+.menu ul li a {
     margin-right: 3vw;
     list-style: none;
     font-size: 1.5vw;
@@ -83,7 +85,7 @@ body::-webkit-scrollbar-thumb {
     color: rgb(86, 141, 219);
 }
 
-.menu #logo{
+.menu #logo {
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 1vw;
@@ -93,38 +95,38 @@ body::-webkit-scrollbar-thumb {
     height: 5vw;
 }
 
-.menu #title{
+.menu #title {
     margin-left: 2vw;
     margin-top: auto;
     margin-bottom: auto;
-    line-height: min(2.5vw,30px);
+    line-height: min(2.5vw, 30px);
 }
 
-.menu #school{
+.menu #school {
     color: rgb(86, 141, 219);
-    font-size: min(1.75vw,20px);
+    font-size: min(1.75vw, 20px);
     font-weight: bold;
 }
 
-.menu #team{
+.menu #team {
     color: rgb(86, 141, 219);
-    font-size: min(2.5vw,30px);
+    font-size: min(2.5vw, 30px);
     font-weight: bold;
 }
 
-.menu ul img{
+.menu ul img {
     display: none;
 }
 
 /* top */
 
-.top{
-    width:100%;
-    height:100vh;
+.top {
+    width: 100%;
+    height: 100vh;
     display: flex;
 }
 
-.motto{
+.motto {
     display: inline-block;
     margin-top: auto;
     margin-bottom: auto;
@@ -133,9 +135,9 @@ body::-webkit-scrollbar-thumb {
     flex-shrink: 0;
 }
 
-.motto p{
+.motto p {
     display: inline-block;
-    background:linear-gradient(transparent 50%, rgba(230, 250, 12, 0.70) 0%);
+    background: linear-gradient(transparent 50%, rgba(230, 250, 12, 0.70) 0%);
     color: rgb(255, 255, 255);
     font-size: 5vw;
     margin-top: 1vw;
@@ -143,43 +145,43 @@ body::-webkit-scrollbar-thumb {
     font-family: 'yorusugaraver';
 }
 
-.top iframe{
+.top iframe {
     position: absolute;
     width: 100vw;
     height: 100%;
     z-index: 0;
 }
 
-.scrollBox1{
+.scrollBox1 {
     background: black;
-    width:20vw;
+    width: 20vw;
     height: 100vh;
     left: 0;
     position: absolute;
     opacity: 0;
 }
 
-.scrollBox2{
+.scrollBox2 {
     background: black;
-    width:20vw;
+    width: 20vw;
     height: 100vh;
     right: 0;
     position: absolute;
     opacity: 0;
 }
 
-.scrollBox3{
+.scrollBox3 {
     background: black;
-    width:100%;
+    width: 100%;
     height: 30vh;
     top: 0;
     position: absolute;
     opacity: 0;
 }
 
-.scrollBox4{
+.scrollBox4 {
     background: black;
-    width:100%;
+    width: 100%;
     height: 30vh;
     bottom: 0;
     position: absolute;
@@ -187,12 +189,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* sectionTitle */
-.sectionTitle{
+.sectionTitle {
     display: flex;
 }
 
-.line-left{
-    height:1vw;
+.line-left {
+    height: 1vw;
     border: 0.25vw solid white;
     width: 10%;
     margin-top: auto;
@@ -202,8 +204,8 @@ body::-webkit-scrollbar-thumb {
     opacity: 0;
 }
 
-.line-right{
-    height:1vw;
+.line-right {
+    height: 1vw;
     border: 0.25vw solid white;
     width: 100%;
     margin-top: auto;
@@ -227,28 +229,28 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
-@keyframes drawLine{
+@keyframes drawLine {
     to {
         opacity: 1;
     }
 }
 
 /*news*/
-.news{
+.news {
     padding-bottom: 10vw;
 }
 
-#newsBoxes{
+#newsBoxes {
     position: relative;
     display: flex;
-    left:10vw;
+    left: 10vw;
     padding-top: 10vw;
     transition: 1s;
 }
 
-.newsBox{
+.newsBox {
     flex-shrink: 0;
-    width:20vw;
+    width: 20vw;
     height: 20vw;
     background-color: white;
     border-radius: 10%;
@@ -257,90 +259,91 @@ body::-webkit-scrollbar-thumb {
     transition: 1s;
 }
 
-.newsBox p{
+.newsBox p {
     color: black;
 }
 
-.newsImageRounder{
+.newsImageRounder {
     width: 90%;
     height: 40%;
     overflow: hidden;
     border-radius: 1vw;
     margin-left: 5%;
-    margin-top:5%;
+    margin-top: 5%;
 }
 
-.newsImage{
+.newsImage {
     width: 100%;
     background-color: rgb(86, 141, 219);
 }
-.newsTitle{
+
+.newsTitle {
     color: rgb(86, 141, 219);
     padding-left: 5%;
     font-size: 1.5vw;
 }
 
-.newsContent{
+.newsContent {
     width: 90%;
     height: 30%;
     margin-left: 5%;
-    font-size: 1vw!important;
+    font-size: 1vw !important;
 }
 
-.newsDate{
-    color: rgb(86, 141, 219)!important;
+.newsDate {
+    color: rgb(86, 141, 219) !important;
     padding-left: 5%;
-    font-size: 1.5vw!important;
+    font-size: 1.5vw !important;
 }
 
-.selected{
-    scale:175%;
+.selected {
+    scale: 175%;
     margin-left: 15vw;
     margin-right: 15vw;
 }
 
-.newsArrow{
+.newsArrow {
     width: 5vw;
 }
 
-.newsArrow:active{
+.newsArrow:active {
     filter: invert(100%);
 }
 
-#newsArrowRight{
+#newsArrowRight {
     position: absolute;
     right: 22vw;
-    top:calc(100vh + 35vw);
+    top: calc(100vh + 35vw);
     transform: translate(-50%, -50%);
     z-index: 4;
 }
 
-#newsArrowLeft{
+#newsArrowLeft {
     position: absolute;
     left: 23vw;
-    top:calc(100vh + 35vw);
+    top: calc(100vh + 35vw);
     transform: translate(50%, -50%);
     z-index: 4;
 }
 
 
 /*Achievements*/
-.achievements p{
+.achievements p {
     font-weight: bold;
     padding-left: 5vw;
     font-size: 3vw;
 }
 
-.achievements svg{
+.achievements svg {
     padding-left: 2vw;
 }
 
-#achievements{
+#achievements {
     padding-top: 7vw;
 }
 
 /*Blog*/
-#fileList li{
+#fileList li {
     font-weight: bold;
     padding-left: 3vw;
     font-size: 3vw;
@@ -349,7 +352,7 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
 }
 
-#fileList li:hover{
+#fileList li:hover {
     color: rgb(80, 80, 80);
     background-color: white;
     border-radius: 1vw;
@@ -359,14 +362,42 @@ body::-webkit-scrollbar-thumb {
     width: 90%;
 }
 
-.activity p{
+.activity p {
     font-weight: bold;
     padding-left: 5vw;
     font-size: 1.5vw;
 }
 
+/*Sponsor*/
+.sponsor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2vw;
+    padding: 2vw;
+}
+
+.sponsorCard {
+    width: calc(48% - 1vw);
+    height: 10vw;
+    background-color: white;
+    border-radius: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2vw;
+}
+
+.sponsorCard p {
+    color: black;
+}
+
+.sponsorCard a {
+    color: black;
+}
+
 /* footer */
-.footer{
+.footer {
     width: 100%;
     height: 10vw;
     background-color: white;
@@ -374,7 +405,7 @@ body::-webkit-scrollbar-thumb {
     z-index: 10;
 }
 
-.footer p{
+.footer p {
     color: rgb(86, 141, 219);
     font-size: 1.5vw;
     font-weight: bold;
@@ -384,7 +415,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* contact us */
-.contact_form{
+.contact_form {
     width: 85vw;
     background-color: white;
     border-radius: 20px;
@@ -392,30 +423,31 @@ body::-webkit-scrollbar-thumb {
     margin-left: auto;
     margin-right: auto;
 }
-.contact_form h1{
-    padding:3vw;
+
+.contact_form h1 {
+    padding: 3vw;
     padding-bottom: 1vw;
     color: rgb(86, 141, 219);
 }
 
-.contact_form p{
+.contact_form p {
     padding-bottom: 1vw;
     padding-left: 3vw;
     color: rgb(219, 86, 86);
 }
 
-.contact_form span{
+.contact_form span {
     color: rgb(219, 86, 86);
 }
 
-.contact_form label{
+.contact_form label {
     color: rgb(86, 141, 219);
     font-size: 2vw;
     font-weight: bold;
     margin-left: 3vw;
 }
 
-.contact_form input{
+.contact_form input {
     width: calc(100% - 6vw);
     margin: 1vw;
     font-size: 2vw;
@@ -425,17 +457,17 @@ body::-webkit-scrollbar-thumb {
     margin-right: 3vw;
 }
 
-.contact_form input:focus{
+.contact_form input:focus {
     outline: none;
 }
 
-.contact_form div{
+.contact_form div {
     display: flex;
     margin-top: 1vw;
     margin-bottom: 1vw;
 }
 
-.contact_form div label{
+.contact_form div label {
     flex-grow: 0;
     flex-shrink: 0;
     margin-left: 1vw;
@@ -443,19 +475,19 @@ body::-webkit-scrollbar-thumb {
     font-size: 1.5vw;
 }
 
-.contact_form div input{
+.contact_form div input {
     width: 1.5vw;
     flex-grow: 0;
     flex-shrink: 0;
-    margin:0;
+    margin: 0;
     margin-left: 3vw;
 }
 
-.contact_form fieldset{
+.contact_form fieldset {
     border: none;
 }
 
-.contact_form #submit{
+.contact_form #submit {
     width: calc(100% - 6vw);
     height: 3.5vw;
     background-color: rgb(86, 141, 219);
@@ -472,47 +504,47 @@ body::-webkit-scrollbar-thumb {
 /*スマホ用*/
 @media screen and (max-width: 480px) {
 
-    *{
+    * {
         overflow-x: hidden;
     }
 
-    body{
+    body {
         font-family: 'arial';
     }
 
-	.menu{
+    .menu {
         height: 20vw;
     }
-    
-    .menu ul li a{
+
+    .menu ul li a {
         display: none;
     }
-    
-    .menu #logo{
+
+    .menu #logo {
         width: 15vw;
         height: 15vw;
     }
-    
-    .menu #title{
+
+    .menu #title {
         margin-left: 3vw;
         line-height: 6vw;
     }
-    
-    .menu #school{
+
+    .menu #school {
         font-size: 3vw;
         font-family: 'arial';
     }
-    
-    .menu #team{
+
+    .menu #team {
         font-size: 5.5vw;
         font-family: 'arial';
     }
 
-    .top{
+    .top {
         overflow: hidden;
     }
 
-    .menuButton{
+    .menuButton {
         display: inline;
         margin-top: auto;
         margin-bottom: auto;
@@ -523,31 +555,31 @@ body::-webkit-scrollbar-thumb {
         height: 8vw;
     }
 
-    .motto{
+    .motto {
         margin-top: auto;
         margin-left: 10vw;
         width: 80vw;
         flex-shrink: 0;
     }
-    
-    .motto p{
+
+    .motto p {
         font-size: 8vw;
         margin-top: 1vw;
         margin-bottom: 1vw;
     }
 
-    #newsBoxes{
+    #newsBoxes {
         position: relative;
         display: flex;
-        left:10vw;
+        left: 10vw;
         margin-top: 10vw;
         padding-bottom: 10vw;
         transition: 1s;
     }
-    
-    .newsBox{
+
+    .newsBox {
         flex-shrink: 0;
-        width:20vw;
+        width: 20vw;
         height: 20vw;
         background-color: white;
         border-radius: 10%;
@@ -555,88 +587,89 @@ body::-webkit-scrollbar-thumb {
         margin-right: 2vw;
         transition: 1s;
     }
-    
-    .newsBox p{
+
+    .newsBox p {
         color: black;
         font-size: 0.5vw;
     }
-    
-    .newsImageRounder{
+
+    .newsImageRounder {
         width: 90%;
         height: 40%;
         overflow: hidden;
         border-radius: 1vw;
         margin-left: 5%;
-        margin-top:5%;
+        margin-top: 5%;
     }
-    
-    .newsImage{
+
+    .newsImage {
         width: 100%;
         background-color: rgb(86, 141, 219);
     }
-    .newsTitle{
+
+    .newsTitle {
         font-size: 1.5vw;
     }
-    
-    .newsContent{
+
+    .newsContent {
         width: 90%;
         height: 30%;
         margin-left: 5%;
         font-size: 1.5vw !important;
     }
-    
-    .newsDate{
+
+    .newsDate {
         color: rgb(86, 141, 219);
         padding-left: 5%;
         font-size: 1.5vw !important;
     }
-    
-    .selected{
-        scale:175%;
+
+    .selected {
+        scale: 175%;
         margin-left: 15vw;
         margin-right: 15vw;
     }
-    
-    #newsArrowRight{
-        top:calc(100vh + 37.5vw);
+
+    #newsArrowRight {
+        top: calc(100vh + 37.5vw);
     }
-    
-    #newsArrowLeft{
+
+    #newsArrowLeft {
         position: absolute;
         left: 23vw;
-        top:calc(100vh + 37.5vw);
+        top: calc(100vh + 37.5vw);
         transform: translate(50%, -50%);
         z-index: 4;
     }
 
-    .sectionTitle{
+    .sectionTitle {
         margin-bottom: 3vw;
         margin-top: 3vw;
     }
 
-    .news .sectionTitle{
+    .news .sectionTitle {
         margin-bottom: -3vw;
     }
 
-    .activity .sectionTitle{
+    .activity .sectionTitle {
         margin-top: 0;
     }
-    
-    .activity p{
+
+    .activity p {
         font-size: 2vw;
     }
 
-    .sponsor p{
+    .sponsor p {
         font-size: 3vw;
         padding-bottom: 3vw;
     }
 
-    .footer a{
+    .footer a {
         font-size: 2.5vw;
         margin-left: 3vw;
     }
 
-    #menuTable{
+    #menuTable {
         position: fixed;
         height: calc(100% - 20vw);
         width: 100%;
@@ -645,7 +678,7 @@ body::-webkit-scrollbar-thumb {
         z-index: 2;
     }
 
-    .menuTable{
+    .menuTable {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -653,7 +686,7 @@ body::-webkit-scrollbar-thumb {
         height: 100%;
     }
 
-    .menuTable li a{
+    .menuTable li a {
         font-size: 7.5vw;
         text-decoration: underline;
         color: rgb(86, 141, 219);
@@ -662,46 +695,46 @@ body::-webkit-scrollbar-thumb {
         text-underline-offset: 2vw;
     }
 
-    .menuTable *{
+    .menuTable * {
         padding-left: 5vw;
         overflow: hidden;
     }
-    
-    .menuTable :last-child{
+
+    .menuTable :last-child {
         padding-bottom: 4vh;
     }
 
-    .menuTable :first-child{
+    .menuTable :first-child {
         padding-top: 4vh;
     }
 
 
-    #top-spacer{
+    #top-spacer {
         padding-top: 25vw !important;
     }
 
-    .contact_form h1{
+    .contact_form h1 {
         font-size: 7.5vw;
         padding-left: 3vw;
     }
-    
-    .contact_form p{
+
+    .contact_form p {
         font-size: 4vw;
     }
-    
-    .contact_form label{
+
+    .contact_form label {
         font-size: 4vw;
     }
-    
-    .contact_form input{
+
+    .contact_form input {
         font-size: 3vw;
     }
-    
-    .contact_form div label{
+
+    .contact_form div label {
         font-size: 2.5vw;
     }
-    
-    .contact_form #submit{
+
+    .contact_form #submit {
         width: calc(100% - 6vw);
         height: 8vw;
         background-color: rgb(86, 141, 219);
@@ -714,8 +747,8 @@ body::-webkit-scrollbar-thumb {
         margin-top: 5vw;
         margin-bottom: 5vw;
     }
-    
-    #top-spacer2{
+
+    #top-spacer2 {
         padding-top: 15vw;
     }
 }
