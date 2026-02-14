@@ -282,10 +282,13 @@ body::-webkit-scrollbar-thumb {
 
 .newsContent{
     width: 90%;
-    height: 30%;
+    height: 40%;
     margin-left: 5%;
     font-size: 1vw!important;
-    overflow: scroll;
+    overflow-y: scroll;
+}
+.newsContent::-webkit-scrollbar{
+    display: none;
 }
 
 .newsDate{
